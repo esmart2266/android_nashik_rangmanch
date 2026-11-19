@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    tools:ignore="MissingPrefix">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#EAEEEC"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+
+            <!--<LinearLayout
+                android:id="@+id/llInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/rlRight"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/rlRight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivLocationPin"
+                    android:fontFamily="@font/sourcesanspro_bold"
+                    android:textColor="@color/font_black_1"
+                    android:textSize="18sp"
+                    tools:text="Dr Prashant Patil" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDegree"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvName"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="4dp"
+                    android:drawablePadding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvName"
+                    app:layout_constraintEnd_toStartOf="@+id/tvBookAppointment"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:textColor="@color/font_black_1"
+                    android:textSize="15sp"
+                    app:drawableStartCompat="@drawable/ic_stethoscope"
+                    tools:text="9975172266 " />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDegree"
+                    android:layout_marginTop="4dp"
+                    android:drawablePadding="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDegree"
+                    app:layout_constraintEnd_toStartOf="@+id/tvBookAppointment"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:textColor="@color/font_black_1"
+                    android:textSize="15sp"
+                    app:drawableStartCompat="@drawable/ic_location_pin"
+                    tools:text="Address Address Address Address Address Address Address " />
+<!--            </LinearLayout>-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLocationPin"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_address_location_pin" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBookAppointment"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:padding="8dp"
+                android:text="Book Appointment"
+                app:fontFamily="@font/sourcesanspro_bold"
+                android:textAllCaps="false"
+                android:textColor="#0000CD"
+                android:textSize="13sp"
+                app:drawableStartCompat="@drawable/ic_check_filled"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <!--<androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rlRight"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/llInfo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/llInfo">
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

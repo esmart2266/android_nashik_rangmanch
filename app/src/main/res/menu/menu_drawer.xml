@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/drawer_home2"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_my_profile"
+            android:icon="@drawable/drawer_myprofile2"
+            android:title="My Profile" />
+
+        <item
+            android:id="@+id/nav_book_theater"
+            android:icon="@drawable/drawer_booktheater"
+            android:title="Book an Asset"
+            android:visible="false" />
+    </group>
+
+    <item android:title="Bookings &amp; Payments">
+        <menu>
+            <item
+                android:id="@+id/nav_my_orders"
+                android:icon="@drawable/drawer_booking2"
+                android:title="My Bookings" />
+            <item
+                android:id="@+id/nav_my_payments"
+                android:icon="@drawable/drawer_payment2"
+                android:title="My Payments" />
+            <item
+                android:id="@+id/nav_my_refund"
+                android:icon="@drawable/drawer_refund2"
+                android:title="My Refund" />
+            <item
+                android:id="@+id/nav_my_penalty"
+                android:icon="@drawable/drawer_penalty2"
+                android:title="My Penalty" />
+            <item
+                android:id="@+id/nav_my_FoodOrders"
+                android:icon="@drawable/orderfood"
+                android:title="My Food Orders"
+                android:visible="false" />
+            <item
+                android:id="@+id/nav_Car_Parking_Report"
+                android:icon="@drawable/parking"
+                android:title="Car Parking Reports"
+                android:visible="false" />
+        </menu>
+    </item>
+
+    <item android:title="Support &amp; Preferences">
+        <menu>
+            <item
+                android:id="@+id/nav_contact_us"
+                android:icon="@drawable/drawer_contactus2"
+                android:title="Contact Us" />
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/drawer_feedback2"
+                android:title="Feedback" />
+            <item
+                android:id="@+id/nav_change_language"
+                android:icon="@drawable/translate"
+                android:title="Change Language" />
+        </menu>
+    </item>
+
+    <item android:title="Account">
+        <menu>
+
+            <item
+                android:id="@+id/nav_delete_myaccount"
+                android:icon="@drawable/drawer_delete_account2"
+                android:title="Delete Account" />
+
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/drawer_logout2"
+                android:title="Log Out" />
+
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,3 @@
+//include ':zbar'
+//include ':core'
+include ':app'

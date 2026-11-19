@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="0dp"
+    app:cardBackgroundColor="#FFFDF6"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="6dp"
+            android:hint="Name*"
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="15sp"
+            app:met_baseColor="@color/font_black_0"
+            app:met_floatingLabel="highlight"
+            app:met_helperTextColor="@color/font_black_0"
+            app:met_iconPadding="0dp"
+            app:met_primaryColor="@color/font_black_0"
+            app:met_textColor="@color/font_black_0"
+            app:met_textColorHint="@color/font_black_3"
+            app:met_underlineColor="@color/font_black_0" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="6dp"
+            android:hint="Enter Mobile Number*"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="15sp"
+            app:met_baseColor="@color/font_black_0"
+            app:met_floatingLabel="highlight"
+            app:met_helperTextColor="@color/font_black_0"
+            app:met_iconPadding="0dp"
+            app:met_primaryColor="@color/font_black_0"
+            app:met_textColor="@color/font_black_0"
+            app:met_textColorHint="@color/font_black_3"
+            app:met_underlineColor="@color/font_black_0" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="6dp"
+            android:hint="Enter Email Address"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="15sp"
+            app:met_baseColor="@color/font_black_0"
+            app:met_floatingLabel="highlight"
+            app:met_helperTextColor="@color/font_black_0"
+            app:met_iconPadding="0dp"
+            app:met_primaryColor="@color/font_black_0"
+            app:met_textColor="@color/font_black_0"
+            app:met_textColorHint="@color/font_black_3"
+            app:met_underlineColor="@color/font_black_0" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/etGst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="6dp"
+            android:hint="Enter GST Number"
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="15sp"
+            app:met_baseColor="@color/font_black_0"
+            app:met_floatingLabel="highlight"
+            app:met_helperTextColor="@color/font_black_0"
+            app:met_iconPadding="0dp"
+            app:met_primaryColor="@color/font_black_0"
+            app:met_textColor="@color/font_black_0"
+            app:met_textColorHint="@color/font_black_3"
+            app:met_underlineColor="@color/font_black_0" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="6dp"
+            android:hint="Enter Address"
+            android:imeOptions="actionNext"
+            android:inputType="textMultiLine|textCapSentences"
+            android:gravity="top|start"
+            android:minLines="3"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textSize="15sp"
+            app:met_baseColor="@color/font_black_0"
+            app:met_floatingLabel="highlight"
+            app:met_helperTextColor="@color/font_black_0"
+            app:met_iconPadding="0dp"
+            app:met_primaryColor="@color/font_black_0"
+            app:met_textColor="@color/font_black_0"
+            app:met_textColorHint="@color/font_black_3"
+            app:met_underlineColor="@color/font_black_0" />
+
+
+
+        <!-- Checkbox -->
+        <CheckBox
+            android:id="@+id/cb_isActive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="6dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Active" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Save" />
+
+            <Button
+                android:id="@+id/btnClose"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Close" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

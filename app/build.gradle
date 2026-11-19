@@ -1,0 +1,194 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+// Apply the Crashlytics Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    signingConfigs {
+        release {
+            storeFile file("D:\\Android-eSmart\\Nashik Smart Reservation System\\NSRS\\keystore.jks")
+            storePassword = 'eSmart2266$'
+            keyAlias = 'key0'
+            keyPassword 'eSmart2266$'
+        }
+    }
+    namespace 'in.gov.nmc.rangmach'
+    compileSdkVersion 36
+    defaultConfig {
+        applicationId "in.gov.nmc.rangmach"
+        minSdkVersion 24
+        targetSdkVersion 36
+        versionCode 19
+        versionName "19"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        renderscriptSupportModeEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        buildConfigField 'String', 'BASE_URL', '"https://smartleaders.in/"'
+//        buildConfigField 'String', 'API_FOLDER', '"/cultural-dev/pune/"'
+//        buildConfigField 'String', 'API_PATH', '"/cultural-dev/pune/MobileApi/"'
+//        buildConfigField 'String', 'PhotoPath', '"cultural-dev/pune/MobileApi/"'
+//        buildConfigField 'String', 'NMCNSRS', '"cultural-dev/pune/"'
+
+        buildConfigField 'String', 'BASE_URL', '"https://cultural.nmc.gov.in/"'
+        buildConfigField 'String', 'API_PATH', '"/MobileApi/"'
+        buildConfigField 'String', 'PhotoPath', '"MobileApi/"'
+        buildConfigField 'String', 'PaymentApi', '"PaymentApi/"'
+
+        // ✅ Add this block here
+//        ndk {
+//            abiFilters "armeabi-v7a", "arm64-v8a"
+//        }
+    }
+
+    ndkVersion "26.2.11394342"//"22.1.7171670" old
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+
+        viewBinding = true
+        buildConfig true
+
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    splits {
+        abi {
+            enable project.hasProperty('buildApkSplits')
+            reset()
+            include 'armeabi-v7a', 'arm64-v8a'
+            universalApk false
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //Material Libraries
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+
+    //Networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.8.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.0'
+    implementation 'javax.annotation:jsr250-api:1.0'
+
+    //rateus
+    implementation 'com.iarcuschin:simpleratingbar:0.1.5'
+
+//    implementation 'com.github.tbruyelle:rxpermissions:0.11'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19' // Latest for RxJava 2
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1' // Latest for RxAndroid 2
+
+//    implementation 'com.jakewharton:butterknife:10.2.1'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    // Add the dependencies for the Firebase Cloud Messaging and Analytics libraries
+    implementation 'com.google.firebase:firebase-messaging:23.4.1'
+    implementation 'com.google.firebase:firebase-analytics'
+
+
+    // Add the Firebase Crashlytics SDK.
+    implementation 'com.google.firebase:firebase-crashlytics'
+
+//    implementation 'com.android.volley:volley:1.2.1'
+
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+//    implementation 'com.kbeanie:multipicker:1.6.2'
+//    implementation("id.zelory:compressor:2.1.0")
+//    implementation 'id.zelory:compressor:3.0.1'
+
+    // Date Range Picker
+    implementation 'com.borax12.materialdaterangepicker:library:2.0'
+
+    implementation "com.github.bumptech.glide:glide:4.16.0"
+    implementation "com.github.bumptech.glide:okhttp3-integration:4.16.0"
+    annotationProcessor "com.github.bumptech.glide:compiler:4.16.0"
+
+    implementation 'androidx.activity:activity:1.9.1'
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'io.nlopez.smartlocation:library:3.3.3'
+    implementation("androidx.multidex:multidex:2.0.1")
+
+    implementation 'com.github.yalantis:ucrop:2.2.2'
+
+    implementation group: 'org.jodd', name: 'jodd-util', version: '6.1.0'
+
+    // Logging
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+//    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+
+//    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.24'
+
+    implementation 'com.github.jkwiecien:EasyImage:3.2.0'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.19.1'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.19.1'
+
+
+//    implementation 'com.otaliastudios:zoomlayout:1.6.1'
+    implementation 'com.google.firebase:firebase-database:21.0.0'
+
+    implementation 'com.firebaseui:firebase-ui-database:8.0.2'
+
+    implementation 'dev.shreyaspatil.MaterialDialog:MaterialDialog:2.2.3'
+
+    implementation 'com.google.android.material:material:1.4.0'
+
+    implementation 'com.github.martinstamenkovski:ARIndicatorView:2.0.0'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.0'
+
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+    implementation 'id.zelory:compressor:2.1.1'
+
+//    implementation project(':core')
+//    implementation project(':zbar')
+}

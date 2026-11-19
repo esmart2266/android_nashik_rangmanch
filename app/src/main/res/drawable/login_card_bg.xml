@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    login_card_bg.xml
+    White card background with large corner radius for the login form card.
+    Used as a fallback if CardView is unavailable; prefer CardView in layout.
+    Place in: res/drawable/login_card_bg.xml
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="#FFFFFF" />
+
+    <corners android:radius="24dp" />
+
+    <stroke
+        android:width="0.5dp"
+        android:color="#E8EAF0" />
+
+</shape>

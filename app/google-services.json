@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "891420441677",
+    "project_id": "pmc-psrs",
+    "storage_bucket": "pmc-psrs.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891420441677:android:3b9d3d369447dafc76b004",
+        "android_client_info": {
+          "package_name": "in.gov.nmc.rangmach"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFCxhZYBmsEXlPIxaejhZoNDnYTg-LxhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891420441677:android:08568114e79df45b76b004",
+        "android_client_info": {
+          "package_name": "in.gov.pmc.psrs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFCxhZYBmsEXlPIxaejhZoNDnYTg-LxhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

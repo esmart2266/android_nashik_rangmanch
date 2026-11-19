@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    circle_saffron_bg.xml
+    Warm saffron/orange circular badge background for the Marathi logo in the bottom bar.
+    Place in: res/drawable/circle_saffron_bg.xml
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pressed state -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="#FFE0B2" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#E65100" />
+        </shape>
+    </item>
+
+    <!-- Default state -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#FFF3E0" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#FFB74D" />
+        </shape>
+    </item>
+
+</selector>

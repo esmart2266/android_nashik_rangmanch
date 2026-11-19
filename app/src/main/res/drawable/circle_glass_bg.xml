@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    circle_glass_bg.xml
+    Semi-transparent white circular background for the language (iv_language) ImageView.
+    Place in: res/drawable/circle_glass_bg.xml
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pressed state: slightly more opaque -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="#33FFFFFF" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#66FFFFFF" />
+        </shape>
+    </item>
+
+    <!-- Default state: glass effect -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#1AFFFFFF" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#40FFFFFF" />
+        </shape>
+    </item>
+
+</selector>

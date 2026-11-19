@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/NoActionBarTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/back_arrow_white"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:titleTextColor="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="drama title"
+                    android:textAllCaps="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llBottom"
+        android:layout_below="@+id/toolbar_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_margin="1dp"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_theaterimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/no_image" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_selectdate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_date"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/select_date" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/et_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/selector_arrow_down"
+                            android:focusable="false"
+                            android:fontFamily="@font/opensans_regular"
+                            android:hint="Select Date"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="24dp"
+                            android:textSize="13dp"
+                            app:met_baseColor="@color/font_black_0"
+                            app:met_floatingLabel="highlight"
+                            app:met_helperTextColor="@color/font_black_0"
+                            app:met_iconPadding="0dp"
+                            app:met_primaryColor="@color/font_black_0"
+                            app:met_textColor="@color/font_black_0"
+                            app:met_textColorHint="@color/font_black_3"
+                            app:met_underlineColor="@color/font_black_0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_selecttime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_clok"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/select_time" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/et_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/selector_arrow_down"
+                            android:focusable="false"
+                            android:fontFamily="@font/opensans_regular"
+                            android:hint="Select Time"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="24dp"
+                            android:textSize="13dp"
+                            app:met_baseColor="@color/font_black_0"
+                            app:met_floatingLabel="highlight"
+                            app:met_helperTextColor="@color/font_black_0"
+                            app:met_iconPadding="0dp"
+                            app:met_primaryColor="@color/font_black_0"
+                            app:met_textColor="@color/font_black_0"
+                            app:met_textColorHint="@color/font_black_3"
+                            app:met_underlineColor="@color/font_black_0" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_eventType"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_eventtype"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/select_event" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/et_select_eventtype"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/selector_arrow_down"
+                            android:focusable="false"
+                            android:fontFamily="@font/opensans_regular"
+                            android:hint="Select Event"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="24dp"
+                            android:textSize="13dp"
+                            app:met_baseColor="@color/font_black_0"
+                            app:met_floatingLabel="highlight"
+                            app:met_helperTextColor="@color/font_black_0"
+                            app:met_iconPadding="0dp"
+                            app:met_primaryColor="@color/font_black_0"
+                            app:met_textColor="@color/font_black_0"
+                            app:met_textColorHint="@color/font_black_3"
+                            app:met_underlineColor="@color/font_black_0" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_seatingCapacity"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/iv_capacity"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/select_capacity" />
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/et_select_seatingCapacity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/selector_arrow_down"
+                            android:focusable="false"
+                            android:fontFamily="@font/opensans_regular"
+                            android:hint="Select Capacity"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="24dp"
+                            android:textSize="13dp"
+                            app:met_baseColor="@color/font_black_0"
+                            app:met_floatingLabel="highlight"
+                            app:met_helperTextColor="@color/font_black_0"
+                            app:met_iconPadding="0dp"
+                            app:met_primaryColor="@color/font_black_0"
+                            app:met_textColor="@color/font_black_0"
+                            app:met_textColorHint="@color/font_black_3"
+                            app:met_underlineColor="@color/font_black_0" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rect_round_white_colorprimary"
+                        android:fontFamily="@font/secular_one_regular"
+                        android:gravity="center"
+                        android:text="Check Availability"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rect_round_white_colorprimary"
+                        android:fontFamily="@font/secular_one_regular"
+                        android:gravity="center"
+                        android:text=" Check Avialable Dates"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_checkavailability"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="Check Availability"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        app:backgroundTint="@color/primaryColor"
+                        app:cornerRadius="12dp"
+                        app:iconPadding="8dp"
+                        app:iconTint="@color/white"
+                        app:rippleColor="@color/primaryLight" />
+
+                    <!-- Check Dates Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_CheckAvailable_Dates"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:text="Check Available Dates"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        app:backgroundTint="@color/secondaryColor"
+                        app:cornerRadius="12dp"
+                        app:iconPadding="8dp"
+                        app:iconTint="@color/white"
+                        app:rippleColor="@color/secondaryLight" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_org"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="0dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_selectOrganization"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="start"
+                        android:text="dsds"
+                        android:textColor="@color/red"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="0dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="0dp">
+
+                            <TextView
+                                android:id="@+id/etOrganization"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:drawableEnd="@drawable/ic_keyboard_arrow_down_black_24dp"
+                                android:focusable="false"
+                                android:gravity="center_vertical|start"
+                                android:maxLines="1"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="24dp"
+                                android:text="dfsfsdfdsf"
+                                android:textColor="@color/font_black_0"
+                                android:textSize="13sp" />
+
+                            <!-- Underline -->
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/font_black_0" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivAddOrganisation"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:src="@drawable/ic_add" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_slotstatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_slotstatus"
+                        android:layout_width="250dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center_vertical"
+                        android:padding="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_mainbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <androidx.core.widget.NestedScrollView
+                            android:id="@+id/nestedScrollView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fillViewport="true">
+
+                            <LinearLayout
+                                android:id="@+id/llDocuments"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/challanitems_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="@drawable/rect_round_grey_outline"
+                                    android:fontFamily="@font/secular_one_regular"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="15dp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/document_textview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/rect_round_grey_outline"
+                                    android:fontFamily="@font/secular_one_regular"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="15dp" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/documents_recyclerView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:nestedScrollingEnabled="true"
+                                    android:orientation="vertical"
+                                    android:overScrollMode="never"
+                                    android:padding="2dp" />
+
+                            </LinearLayout>
+
+                        </androidx.core.widget.NestedScrollView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/paymentchart_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rect_round_grey_outline"
+                            android:fontFamily="@font/secular_one_regular"
+                            android:text="Payment Chart"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="15dp" />
+
+                        <androidx.core.widget.NestedScrollView
+                            android:id="@+id/nestedScrollView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fillViewport="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recyclerView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:nestedScrollingEnabled="true"
+                                    android:orientation="vertical"
+                                    android:overScrollMode="never"
+                                    android:padding="2dp"
+                                    android:visibility="visible" />
+
+                            </LinearLayout>
+
+                        </androidx.core.widget.NestedScrollView>
+
+                        <androidx.core.widget.NestedScrollView
+                            android:id="@+id/nestedScrollView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fillViewport="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/challanitems_text_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/rect_round_grey_outline"
+                                    android:fontFamily="@font/secular_one_regular"
+                                    android:text=""
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="15dp"
+                                    android:visibility="gone" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/challan_recyclerView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:nestedScrollingEnabled="true"
+                                    android:orientation="vertical"
+                                    android:overScrollMode="never"
+                                    android:padding="2dp" />
+
+                            </LinearLayout>
+
+                        </androidx.core.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/halfround_background"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_booknow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!--            <ImageView-->
+            <!--                android:layout_width="30dp"-->
+            <!--                android:layout_height="30dp"-->
+            <!--                android:src="@drawable/tickets" />-->
+
+            <TextView
+                android:id="@+id/tv_booknow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:fontFamily="@font/sourcesanspro_bold"
+                android:text="BOOK NOW"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
